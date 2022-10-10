@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on 产品拯救世界</title>
+    <title>Blogs on 产品改变世界</title>
     <link>https://saki0323.github.io/blog/</link>
-    <description>Recent content in Blogs on 产品拯救世界</description>
+    <description>Recent content in Blogs on 产品改变世界</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 25 Sep 2022 03:32:39 +0800</lastBuildDate><atom:link href="https://saki0323.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 11:12:01 +0800</lastBuildDate><atom:link href="https://saki0323.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sdk工具向设计回顾</title>
+      <link>https://saki0323.github.io/blog/2022/sdk%E5%B7%A5%E5%85%B7%E5%90%91%E8%AE%BE%E8%AE%A1%E5%9B%9E%E9%A1%BE/</link>
+      <pubDate>Thu, 29 Sep 2022 11:12:01 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/blog/2022/sdk%E5%B7%A5%E5%85%B7%E5%90%91%E8%AE%BE%E8%AE%A1%E5%9B%9E%E9%A1%BE/</guid>
+      <description>1.游戏sdk工具向优化的可行性。 在我看来，游戏sdk往工具向优化是其产品核心价值之一，及其推荐往这个方向思考探究。原因我历史文章有聊到过，这是游戏sdk自身生态位所决定的。在互联网发展趋向成熟或者开始下坡的时候，大厂APP在各自领域早已占山为王，撒尿为界。游戏想去做社交聊天向，腾讯系给你整的明明白白的，想去搞内容向，那抖快小破站也不是食素的，唯有工具向，大厂鞭长莫及也懒得去争抢。</description>
+    </item>
+    
+    <item>
+      <title>Sdk项目梳理</title>
+      <link>https://saki0323.github.io/blog/2022/sdk%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86/</link>
+      <pubDate>Tue, 27 Sep 2022 11:19:45 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/blog/2022/sdk%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86/</guid>
+      <description>1.初期提出优化登录系统、推送系统这些想法来源 方法论其实挺多的，个人对方法论不太感冒，但也不排斥。我自己有个观点，产品首先是用户，其次是产品，书读百遍其义自见，产品打磨亦是如此。 比如为了对sdk有更直观的认识，我每天都会把所有的sdk基础版本游戏尝试一下（所谓的基础版本是经过部分重构的sdk版本，由于部分接口调整导致前后版本功能上不兼容，需要做前端或后端的版本控制），对竞品的游戏sdk也做单独拆解，自己玩了一个多月之后，感受sdk各功能的体验，像登录、支付、代金券、礼包、群聊等等功能好不好用次数一多自然很容易感受到。</description>
+    </item>
+    
     <item>
       <title>游戏SDK浅介绍</title>
       <link>https://saki0323.github.io/blog/2022/%E6%B8%B8%E6%88%8Fsdk%E6%B5%85%E4%BB%8B%E7%BB%8D/</link>

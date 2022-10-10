@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Sdk工具向设计回顾 | 产品改变世界</title>
+  <link rel = 'canonical' href = 'https://saki0323.github.io/blog/2022/sdk%E5%B7%A5%E5%85%B7%E5%90%91%E8%AE%BE%E8%AE%A1%E5%9B%9E%E9%A1%BE/'>
+  <meta name="description" content="往之不谏,来者可追">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Sdk工具向设计回顾" />
+<meta property="og:description" content="1.游戏sdk工具向优化的可行性。 在我看来，游戏sdk往工具向优化是其产品核心价值之一，及其推荐往这个方向思考探究。原因我历史文章有聊到过，这是游戏sdk自身生态位所决定的。在互联网发展趋向成熟或者开始下坡的时候，大厂APP在各自领域早已占山为王，撒尿为界。游戏想去做社交聊天向，腾讯系给你整的明明白白的，想去搞内容向，那抖快小破站也不是食素的，唯有工具向，大厂鞭长莫及也懒得去争抢。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://saki0323.github.io/blog/2022/sdk%E5%B7%A5%E5%85%B7%E5%90%91%E8%AE%BE%E8%AE%A1%E5%9B%9E%E9%A1%BE/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-09-29T11:12:01+08:00" />
+<meta property="article:modified_time" content="2022-09-29T11:12:01+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sdk工具向设计回顾"/>
+<meta name="twitter:description" content="1.游戏sdk工具向优化的可行性。 在我看来，游戏sdk往工具向优化是其产品核心价值之一，及其推荐往这个方向思考探究。原因我历史文章有聊到过，这是游戏sdk自身生态位所决定的。在互联网发展趋向成熟或者开始下坡的时候，大厂APP在各自领域早已占山为王，撒尿为界。游戏想去做社交聊天向，腾讯系给你整的明明白白的，想去搞内容向，那抖快小破站也不是食素的，唯有工具向，大厂鞭长莫及也懒得去争抢。"/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://saki0323.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://saki0323.github.io/images/favicon.ico" />
+
+  
+  
+  
+    
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://saki0323.github.io">
+  
+    <div id="logo" style="background-image: url(https://saki0323.github.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>产品改变世界</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95">纸上篇</a></li>
+      
+        <li><a href="/blog">躬行篇</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <h1 id="title">Sdk工具向设计回顾</h1>
+  <div class="content" itemprop="articleBody">
+  
+    <p>1.游戏sdk工具向优化的可行性。
+在我看来，游戏sdk往工具向优化是其产品核心价值之一，及其推荐往这个方向思考探究。原因我历史文章有聊到过，这是游戏sdk自身生态位所决定的。在互联网发展趋向成熟或者开始下坡的时候，大厂APP在各自领域早已占山为王，撒尿为界。游戏想去做社交聊天向，腾讯系给你整的明明白白的，想去搞内容向，那抖快小破站也不是食素的，唯有工具向，大厂鞭长莫及也懒得去争抢。</p>
+<p>2.游戏sdk工具向优化思路
+当我我们再聊工具的时候，聊的基本上是工具背后的主体，XX工具重点是XX而不是工具，说白了工具就是一切绿叶，是来辅助他的主体的，因而游戏sdk工具向优化重点就是以游戏为中心，逐级开展。</p>
+<p>说白了，游戏sdk的核心价值就在辅助游戏，打一个好辅助，作为绿叶衬托红花，简而言之，游戏sdk产品优化方向就是尽可能凸显游戏，放大游戏体验，为此要在样式设计、UI交互、产品定位上均给游戏本体让步，不建议喧宾夺主。（解释：玩家下载游戏是为了玩游戏而不是像通过sdk，我割我自己给研发或者发行送钱的，所以作为游戏sdk类产品，重点却是在凸显游戏上）</p>
+<p>3.几个凸显游戏的sdk优化方向
+1）在样式设计上，以游戏为主。
+Sdk的常见交互很少，点击悬浮球进入sdk主功能区便是常见操作，这个设计不仅在游戏上常见，很多偏复杂型的产品也都曾出现过这样的功能，比如前几年版本的微信，张小龙戏称其为“狗皮膏药”，越看越难看。游戏类sdk在设计上需要降低自己的存在感，这一点我跟设计大佬探讨过很久，也出过相当多的方案呢，可行方案目前就两种“半透明和毛玻璃样式”。
+a.选择透明是为了凸显游戏自身的设计，哪怕是用户打开sdk时，也可以注意到游戏即时画面；
+b.选择半透明是考虑到sdk体验上的设计，透明化不利于用户在sdk信息上的索取，为此需要找到一个合适的透明度，即能看到游戏也能正常阅读sdk相关信息。针对sdk上重要型信息，可以用适当的不透明来做补充，灵活处理。设计上以用户体验为主时，并不会有刻板教条进行限制。
+c.透明度确认后，就是色值的选择，色值的选择更多属于设计本质工作，此处不过多赘述。补充一下核心设计原则“辅助类设计，第一眼看上去不能有突兀感，不能不自然，让大家一眼看上去说不出来个一二三，”</p>
+<p>2）sdk产品框架搭建上，以游戏为主
+前文聊过，sdk和游戏是两个产品，但是会共用同一个手机界面，当游戏和sdk同时出现时，优先级作何选择？自然是以游戏为主，此处的sdk可以简单理解为一个dialog弹窗，弹窗的强制性不利于用户的产品体验，所以设计上需要尽可能摒弃这种强制性，sdk界面不应该是直接覆盖在游戏界面上，直接覆盖会打断游戏操作，特别是RPG类游戏，用户在跑任务线，寻路或自动寻路的过程中被sdk弹窗界面打断是非常影响体验的。我们给出的解决方案是将sdk的框架进行重构，舍弃写原生写法，将sdk悬浮至游戏界面，用户在玩游戏打开sdk并不会打断游戏的操作，配合半透明的设计，将游戏的优先级进一步拔高。</p>
+<p>4.sdk向设计，简单却又不简单
+时间回到当初我们对sdk改版的日子，经过长时间的登录与设计，我们最终确认了sdk的改版样式，其中包括透明与半透明的选取、半透明与毛玻璃的选取、透明度的调优，色值的调优。光是出图就出了一大推。</p>
+<p>看似很简单的一个产品，为什么设计上会这么复杂呢？
+我们一直在追求那种，“设计了但又没有设计，让设计存在于无形之中。”的那种设计调性，知易行难。而且设计框架样式只是第一步，后面我们又花了一年多的时间对细节进行调优，在此我大致列出我们的调优思路：
+1）同类型的设计模板化，规范化。
+非特殊要求不做额外过度设计比如色值、透明度、不透明区域，各种切换特效，间距、高度等等</p>
+<p>2）同类框架进行技术封装，不单独写代码
+以弹窗为例，弹窗相关设计进行全局类封装，目前我们的弹窗位置，样式上的各种数值需要全部为统一的，非特殊要求不做调整。技术类封装有个额外要求，如果哪天需要对sdk大概，弹窗等设计上需要调整时，需要要求技术上进行很便捷的调整，而不是产品去一个个翻自己的sdk设计。</p>
+<p>3）Sdk更新上的滞后问题
+作为发行与研发对接的功能，我过去接手的sdk一直有个问题无法实现，包括我们的很多时间都浪费这个无法实现的功能上，经常需要给它擦屁股。框架逻辑如下：</p>
+<p>Sdk在双方对接时，更新接口存在些许问题，聊到更新侧功能，常见的涉及成员包括：
+发行方（sdk所属单位），发行方会对sdk功能进行更新，部分功能前后版本会做有大量的版本控制，前后无法兼容，需要用户进行强更处理。由于目前的sdk与游戏进行了融合打包，无法单独进行更新，需要一起强更，而游戏强更对于游戏玩家体验的伤害是毋庸置疑的，特别是那种几个G的游戏。
+研发方：大部分研发方能正常与sdk进行对接，但也存在部分研发，由于技术逻辑上的不兼容，无法正常进行打包，举一个常见例子，为了限制外G等 操作，研发会对游戏类产品进行加固，而加固可能会带来sdk对接上的问题。当然他们也可以提供代码，发行对接之后再自行加固，这想想都不太可能
+用户方：作为用户侧，更新往往是比较缓慢的，可以代入到自己玩游戏的场景，很少会出现游戏强更的情况，除非是版本大更新，但是游戏类项目的版本大更新往往是年度的，平常更多是的是简单的热更新。由此会带了sdk更新上的一个问题：比如我的sdk版本已经是7.99，而用户版本依旧是7.01，中间差了好几十个版本，而不同版本之间大概率会存在一些版本控制稀释问题，或者版本控制相互冲突问题，简而言之，sdk前端功能换代上会非常之缓慢</p>
+<p>4）将入口预留给中台或者后台，页面交由web
+基于问题3的解决方案，前文提到单独调整sdk前台（前台）设计，在用户侧无法立刻生效，需要用户慢慢进行更新，但是这个问题只存在于前端控制类的设计。什么叫前端控制类设计呢？
+举个例子，我们的APP样式比如头像可能是客户端Android/iOS写死的，这种情况下我想换个头像就需要客户端重新出包，下载最新代码才可以实现；但是如果头像是中后台控制的，客户端只预留了一个头像入口，在改动的时候只需要让后台调整一下数据，客户端刷新一下就可以。当然此处的头像举例是非常具象的，大部分情况更为复杂，比如一个或几个界面样式，甚至需要配合客户端进行数据对接的。</p>
+<p>就上面的解释，不难发现针对更新起来较为复杂的功能，客户端在设计上尽量给后端留入口，让后端进行更新是更为合理的。这需要要求设计者在一开始就预留好常见数据接口，而这点对产品经理的要求不低，作为产品至少需要知道自己产品未来几个月的优化方向，提前布局好接口，以备不时之需。</p>
+
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  产品改变世界 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">主页</a></li>
+         
+        <li><a href="/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95">纸上篇</a></li>
+         
+        <li><a href="/blog">躬行篇</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>
