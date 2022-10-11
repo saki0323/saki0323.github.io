@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 游戏SDK浅介绍 | 产品改变世界</title>
+  <link rel = 'canonical' href = 'https://saki0323.github.io/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/%E6%B8%B8%E6%88%8Fsdk%E6%B5%85%E4%BB%8B%E7%BB%8D/'>
+  <meta name="description" content="往之不谏,来者可追">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="游戏SDK浅介绍" />
+<meta property="og:description" content="此处的SDK特指游戏发行、游戏厂商制作的集成小功能，分为一般分为对接和自用，这样叙述不太好理解，举些栗子：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://saki0323.github.io/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/%E6%B8%B8%E6%88%8Fsdk%E6%B5%85%E4%BB%8B%E7%BB%8D/" /><meta property="article:section" content="项目记录" />
+<meta property="article:published_time" content="2022-09-25T03:32:39+08:00" />
+<meta property="article:modified_time" content="2022-09-25T03:32:39+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="游戏SDK浅介绍"/>
+<meta name="twitter:description" content="此处的SDK特指游戏发行、游戏厂商制作的集成小功能，分为一般分为对接和自用，这样叙述不太好理解，举些栗子："/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://saki0323.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://saki0323.github.io/images/favicon.ico" />
+
+  
+  
+  
+    
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://saki0323.github.io">
+  
+    <div id="logo" style="background-image: url(https://saki0323.github.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>产品改变世界</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95">躬行篇</a></li>
+      
+        <li><a href="/blog">纸上篇</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <h1 id="title">游戏SDK浅介绍</h1>
+  <div class="content" itemprop="articleBody">
+  
+    <p>此处的SDK特指游戏发行、游戏厂商制作的集成小功能，分为一般分为对接和自用，这样叙述不太好理解，举些栗子：</p>
+<p>一、对接相关</p>
+<p>以B服的原神为例，B服的原神从公司上，分为两个部分：一个是发行方哔哩哔哩，一个是游戏方米忽悠。作为两家公司合作产品，其中有许多要打配合进行对接确认的地方，比如登录时的账号，因为是B服进入，肯定需要使用B站账号，而B站账号一旦进入到原神就会在米忽悠那里生成游戏方账号数据，原则上进入B服的账号数据相对于原神自己的账号信息会少一些，这取决于两家之间的洽谈，为什么这么说呢，我们也浅聊一下：</p>
+<p><img src="%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E4%BA%91%E6%B8%B8%E6%88%8F%E7%9A%84SDK.png" alt="哔哩哔哩云游戏的SDK"></p>
+<p>1.用户信息采集落在哪一方的问题，落在发行方还是落在游戏方</p>
+<p>一般而言都是落在发行方的，原因很简单，发行方处理起来会更便捷，因为发行方对接的游戏非常多，发行方不可能根据其他游戏来单独出接口。发行方就像一个菜市场，在菜市场买卖等全局规矩需要有菜市场管理方进行规定，如果菜市场需要根据每个小贩，都单独来设计规矩，或者店铺，管理会变得复杂且麻烦。发行也是如此，发行对接的游戏方比较多，所以让其他游戏方来对接发行，原则上更加合理一些。</p>
+<p>当然这个也要看游戏方和发行方谁强势，谁弱势的问题，强势的游戏方遇上弱势的发行，那我肯定不会在乎你的感受，爱存不存，爱接不接，就比如企鹅系游戏，企鹅游戏信息在我浅薄记忆里，就从未交付给其他发行方来做。</p>
+<p>2.政策相关，比如未成年监控，实名等等</p>
+<p>前些年，国家极度加强了未成年人游戏相关的管理，实名上报等要求非常严格，而实名一般在游戏登录阶段，正常情况下会交由发行方来进行处理，但是也有不少正规或者说强势的游戏方要求自己去实名，或者说获取实名相关信息，自我监控。
+看似无用之一的实名，也在双方的博弈之中，但凡与用户信息相关，各大企业寸土必争，如果问实名信息有什么用，那用处可多了，毕竟简简单单的身份证数字就包含了一系列的用户信息，虽然实名时会强调，身份证信息不允许任何公司商用，但有没有利用过，谁知道呢，灰色区域。</p>
+<p>那发行为什么要对用户信息藏着掖着呢？
+这里面的灰色门道较多，不过多展开，举个小栗子，正常而言发行方跟游戏方都会进行一些对赌协议，或者其他py协议，游戏方要求发行方渠道这个月流水要过一个亿，要求发行方月活要过一个亿，等等一些苛刻要求，作为发行方也不傻，钱到位了，肯定要点自己喜欢的姿势，比如在分成上的让步，对竞争对手的打击，资源位上的争夺，宣发上的投入，是否C位等等，手段并不弱于饭圈的哥哥饭们，毕竟谁是宣发上的煮师爷还真不好说。</p>
+<p>而这些协议签订后，发行方就会通过灰色方式来完成这些协议，不就是饭圈做数据那一套，谁还不会呢，当然这些做出来的数据，肯定不能告诉游戏方，因而，用户的B服账号信息，实名信息，发行方会想方设法绕过游戏方再说。万一合作之后被发现了，双方大多也是睁一只眼闭一只眼，过上了究极和谐的婚后生活。</p>
+<p>以上，SDK作用之一便是游戏厂商与发行的洽谈合作（此处主要为产品层面，非技术层面）</p>
+<p>二、自我产品化需求</p>
+<p>1.产品功能的衍生，打通产品彼此之间的生态链接</p>
+<p><img src="%E7%B1%B3%E5%BF%BD%E6%82%A0%E4%BA%91%E6%B8%B8%E6%88%8F%E7%9A%84SDK.png" alt="米忽悠云游戏的SDK"></p>
+<p>发行方：重点作为引流功能
+主要为引流功能，一般而言，用户下载了游戏很少会记住发行方，但是作为发行方，怎么能忍。毕竟在发行看来，用户就相当于自己的娃，但是这个娃只知道叫游戏方爸爸，那不行，因而作为发行方SDK一个重要的产品改进方向就是引流功能，将大IP下的游戏用户吸引到自己的应用市场去。打造自己游戏市场的品牌，逐步蚕食原游戏用户，哪怕用户不玩小米的原神，也要想方设法让用户去小米应用市场玩一款小米的其他游戏。为此不惜各种代价在自己的SDK上，进行推广，让用户打开应用市场去领取名义上的各种福利，实际上都是在割韭菜，一方面割游戏方的韭菜，一方面割用户的韭菜。</p>
+<p>游戏方：主要为留存功能
+说起游戏平台SDK可能会带来误解，就比如觉得SDK主要为游戏方和发行方进行对接的玩意，这点是没错的，但有一种很普遍的情况，游戏厂商两边都占据这，即是游戏方，也是发行方。这个时候也是需要SDK的，毕竟一个游戏方很大可能不止一款游戏，可能还在多个项目组名下，如此看来不同游戏之间实际上也可以看做不同厂商。</p>
+<p>游戏方在设计SDK时，会着重考虑到游戏的留存问题，而产品方面跟留存情况直接相关的就是体验问题，所以游戏方自家的SDK重点会放在体验上，一句话宁可没有，不可打扰，我在翻过很多游戏方自己的SDK，基本进行游戏内内置，很少见直接进行悬浮，游戏方自家的SDK是真的简洁，不过放置过多的非诱导氪金内容打扰用户，作为游戏玩家我哭死。</p>
+<p><img src="%E5%86%85%E7%BD%AE%E7%9A%84%E5%8E%9F%E7%A5%9ESDK.png" alt="内置的原神SDK">
+（这些SDK都有个共同特点，往自己应用市场进行引流，点击跳转到应用市场）</p>
+<p>游戏方的留存跟发行方引流有异曲同工之妙，都是往应用市场进行跳转，通过自家应用市场对用户做其他维度上的留存。（作为游戏类产品，主要留存方式就是游戏本身，这点毋庸置疑）比如米忽悠往米游社跳转，猪场会往网易大神跳转，企鹅系可能往qq微信游戏中心跳转。</p>
+<p><img src="%E8%A2%AB%E5%B1%8F%E8%94%BD%E7%9A%84%E5%8E%9F%E7%A5%9ESDK.png" alt="被屏蔽的原神SDK">
+（在B服里，跳转到米游社的入口被屏蔽了，读者自行求证，可能是应B站要求的，不想让米忽悠引流？爱恨情仇谁知道呢）</p>
+<p>引流和留存某种角度上也是一体的，最大程度上利用用户资源，发行方想通过SDK将用户引流到自己的应用市场，想方设法让用户自己循环起来，专业点的名词叫洗用户或者滚用户；而游戏方想维系好自身用户的留存情况，尝试将用户引到自己的官方社区去。一方由引流到留存，一方由留存到引流。当然我也见过游戏方自己绝绝子的引流方式，比如当年猪场楚留香上线的时候，我正在玩梦幻西游，游戏中就弹出爷爷你几千年前预约的游戏终于上线了&hellip;</p>
+<p>都是自己的游戏，还允许相互引流，这不是在洗用户吗？站在产品的角度还真不是，比如我是梦幻西游的用户，也是楚留香的用户，某种意义上来讲我是猪场的两个用户，而不是一个用户，产品的用户从来都不是一个具象的人，或者说中国有13亿人，但是企鹅系中国用户量实际上超过十三亿，感兴趣可以了解《俞军产品方法论》。</p>
+<p>正是用户非具象人的这一属性，通过SDK打通各应用之间的通道就极其重要，毕竟一个具体的人，这么打通一下会变成三个四个甚至更多，加之单一的食物链远没有食物网稳定，因而不管游戏方还是发行方都会十分重视SDK的这一属性。（我曾经玩梦幻的时候，在游戏内收到了网易严选的推送）</p>
+<p>2.微型应用市场</p>
+<p>发行方应用市场或者游戏方社区的主要作用其实挺类似的，都包含“工具、内容和社交”三个部分，发行方的应用市场会特殊一些，还有一个洗用户的功能，比如美其名曰帮用户找游戏推荐游戏。
+SDK在设计上往往会考虑跟相应的游戏市场或者社区进行对标（在此我们统一称为社区），当然会在功能上做一些阉割，毕竟 在游戏中直接内置个社区，也太影响用户体验，败口碑了。至于我为什么聊到这里，因为就我这些年对SDK的优化经验来看，SDK的发展方向也是往工具内容和社交上靠，只是不同的游戏（站在游戏方角度）不同的发行方侧重点会有所不同而已，但是万变不离其中，思考清楚工具定位、内容定位或者社交定位会给产品提供非常多的优化思路。</p>
+
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  产品改变世界 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">主页</a></li>
+         
+        <li><a href="/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95">躬行篇</a></li>
+         
+        <li><a href="/blog">纸上篇</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

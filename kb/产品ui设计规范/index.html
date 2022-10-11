@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <script type="text/javascript" src="https://latest.cactus.chat/cactus.js"></script>
+  <link rel="stylesheet" href="https://latest.cactus.chat/style.css" type="text/css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> 产品UI设计规范 | 产品改变世界</title>
+  <link rel = 'canonical' href = 'https://saki0323.github.io/kb/%E4%BA%A7%E5%93%81ui%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/'>
+  <meta name="description" content="往之不谏,来者可追">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="产品UI设计规范" />
+<meta property="og:description" content="过去的几年，我任职于所谓的互联网小厂，前期大部分时间奔波于整个产品开发中心的不规范之中，在各种体系还在从0到1搭建的时期，UI设计上简直是测试部门bug集中的重灾区。为此我曾花费了大量的经历来规范产品部门、设计部门、技术部门的UI处理上的规范问题。正所谓磨刀不误砍柴工，一个内部明确的设计规范对整体研发流程大有裨益，少了很多扯皮，产品也更耐打。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://saki0323.github.io/kb/%E4%BA%A7%E5%93%81ui%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/" /><meta property="article:section" content="KB" />
+<meta property="article:published_time" content="2022-08-17T03:55:08+08:00" />
+<meta property="article:modified_time" content="2022-08-17T03:55:08+08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="产品UI设计规范"/>
+<meta name="twitter:description" content="过去的几年，我任职于所谓的互联网小厂，前期大部分时间奔波于整个产品开发中心的不规范之中，在各种体系还在从0到1搭建的时期，UI设计上简直是测试部门bug集中的重灾区。为此我曾花费了大量的经历来规范产品部门、设计部门、技术部门的UI处理上的规范问题。正所谓磨刀不误砍柴工，一个内部明确的设计规范对整体研发流程大有裨益，少了很多扯皮，产品也更耐打。"/>
+
+  
+  
+  
+  <link rel="stylesheet" href="https://saki0323.github.io/css/styles.94f653e9e151e28067a7c5dbbc4600cbd5a3c721e79faaf971e523c40f3b249b8e4f20bb57810dfffa8d559ca5c140fd56eb4cd9c0853113ad08e66afdb08bdd.css" integrity="sha512-lPZT6eFR4oBnp8XbvEYAy9WjxyHnn6r5ceUjxA87JJuOTyC7V4EN//qNVZylwUD9VutM2cCFMROtCOZq/bCL3Q=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://saki0323.github.io/images/favicon.ico" />
+
+  
+  
+  
+    
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    <header id="header">
+  <a href="https://saki0323.github.io">
+  
+    <div id="logo" style="background-image: url(https://saki0323.github.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>产品改变世界</h1>
+  </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95">躬行篇</a></li>
+      
+        <li><a href="/blog">纸上篇</a></li>
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <h1 id="title">产品UI设计规范</h1>
+  <div class="content" itemprop="articleBody">
+  
+    <p>过去的几年，我任职于所谓的互联网小厂，前期大部分时间奔波于整个产品开发中心的不规范之中，在各种体系还在从0到1搭建的时期，UI设计上简直是测试部门bug集中的重灾区。为此我曾花费了大量的经历来规范产品部门、设计部门、技术部门的UI处理上的规范问题。正所谓磨刀不误砍柴工，一个内部明确的设计规范对整体研发流程大有裨益，少了很多扯皮，产品也更耐打。</p>
+<p>本文基于小厂产品的情景，节选部分设计上的思考，给小厂产品抛砖引玉，罗马不是一天建成的，全局类交互统一也是一件值得长期优化的事情。</p>
+<ol>
+<li>颜色：
+1）颜色使用上要有度，不宜过多，且要统一，同一个界面原则上颜色数量控制在三四个以内为好，这点不同app要求不一样；</li>
+</ol>
+<p>2）加深置灰要有明确规范，比如引导用户点击的要适当高亮，突出显示，但若无特殊要求，不可过度使用高亮展示；当前不希望用户点击的需要降低存在感，（强调，不希望用户点击的交互除非是特殊需求才过度设计，否则按照正常的交互设计，不可因部分业务个人私欲降低用户体验）；可以点击的样式设计的足够明确，按钮需要是有色可交互，同样的无法点击的按钮需要合理进行置灰，提前告诉用户无法点击。</p>
+<p>3）无法点击的按钮，是否给提示
+按照app调性来，如果app整体上的置灰点击无反应，则所有置灰都做无反馈即可；若app置灰后点击依旧会提示用户为什么不能点击，则整体均按照此设计，切忌贯彻不到底，设计不规范给用户带来困扰。关于提示问题，后面会继续讨论。</p>
+<p>（至于市面上讨论的即时反馈问题，见仁见智，即时反馈在我看来更多更多适用于偏复杂的操作指引，其他场景下必要性不强，但并非不能追求）</p>
+<p>4）基于生活常识去设计，比如生活中红色基本上代表着停止关闭警告不鼓励，而绿色蓝色代表着通行或鼓励动作，这点在红绿灯上设计非常明显，产品交互上也需要多和生活联动。一个非常成功的设计：手机的接通和挂断对应着红色和蓝色，即使没有文字提示老人和小孩也能非常轻易地分辨，这就是设计的魅力，多从生活寻找灵感</p>
+<ol start="2">
+<li>间距与大小（间距要合理，符合人类操作习惯）
+1）大小除了视觉可见的样式大小之外，还有交互区域的大小，不能出现点击没反应，因为交互区域不合理导致，包括交互区域过大引发误操作，交互区域过小导致用户交互无反馈，正常来讲，交互按钮设计属于技术规范，但是在一个不成熟的产品开发部门，产品不得不做此类控制。</li>
+</ol>
+<p>2）间距包括常见行间距，段间距，各个区域的间隙合理适中统一，以设计标尺为要</p>
+<p>3）其他常见问题：
+技术设计不考虑换行问题，技术设计不考虑文字过长的处理问题，是滚动还是省略，技术处理不考虑接口异常报错问题，技术设计不考虑参数为空的问题。</p>
+<ol start="3">
+<li>弹窗类提示
+1）弹窗位置：
+弹窗位置常规设计为中部或底部，中部的设计更多基于系统操作习惯，随着大屏时代的发展，中部弹窗已不是最优选择（对于竖屏而言）底部弹窗会更合适，方便手指进行交互，且点击区域较大，另外随着弹窗的发展，底部弹窗可以在越来越多的场景下替代跳转新界面的交互</li>
+</ol>
+<p>比如触发登录时，按照以往的设计会跳转到全新的界面去登录，登录成功之后再跳转回来，但是随着大屏手机的普及，登录类弹窗可以从底部弹出，不需要额外去新的界面交互，用户认知更方便。
+一般而言，界面切换越多，对用户理解上的困扰越大，</p>
+<p>2）弹窗确认按钮和取消按钮的摆放位置问题
+对于移动端而言，确认和取消按钮摆放顺序已经不存在争议，除部分非常老的设计还会用多年前的设计之外，现在主流APP已基本进行普及，即确认在右，取消在左，这是基于按钮左右摆放的前提下。翻译过来可以更加简单，右边的为进行到下一步操作，左边的按钮为返回到上一步交互的操作。或者推广来说，屏幕的右侧基本上跟前进相关，屏幕的左边基本上跟回退到上一步有关。</p>
+<p>基于人操作习惯，我们会给屏幕交互区域这样的优先级，一般，屏幕上下左右的交互优先级为：下方区域高于上方区域，右方区域高于作方区域，至于下方和右方哪个重要，产品可以自己考虑，这套优先级基于人手持移动设备的方式而来，一般人手握手机下方，使用右手操作，相比之下左边上边交互会麻烦些。</p>
+<p>另外屏幕中央区域为视野集中区域，切记勿胡乱摆放物件，影响用户体验，这样的设计在抖音上非常常见。</p>
+<p>3）弹窗消失规范
+作为一个重视用户体验的产品，切忌勿设计无法关闭的弹窗，另外所有弹窗均需要明确取消弹窗的问题，我曾见过奇葩设计，怕用户便捷关闭弹窗，故意把×设计的非常不明显，简直是PC时代的毒瘤。</p>
+<p>一个尊重用户的产品不会轻易给用户弹出弹窗，特别是一些很傻的操作，是对用户的侮辱。可以适当的使用半屏替代全屏，toast提示替换dialog弹窗，不做提示来替换toast提示，关于弹窗类的克制可以参考微信，绝对是弹窗的神，设计的美学。</p>
+<p>4）弹窗提示要简洁，明确，切忌摆放技术类术语
+dialog弹窗不是用来放隐私政策的，或者长文本内容的，使用dialog弹窗放置长文本内容是对产品的侮辱，也是对用户的不尊重， （接近全屏的dialog弹窗除外）dialog弹窗是为了让提示骑脸，避免用户的敏感或危险交互而设计，提示语上需要简洁有力干练，让人一幕了然随机快速获取提示，关闭dialog弹窗。</p>
+<p>一般而言，打断用户的操作是非常影响体验的，设计上尽量不打断用户交互，或者转移用户所在界面，即便是非要打断也需要极度克制，而dialog弹窗设计即为打断用户交互。</p>
+<p>打断用户交互也分为两种场景，其一为了特殊目的打断用户正常交互，这种就很恶心，在很多流氓类软件非常常见；其二为了避免用户误操作，不得已进行打断，这种设计就值得提倡；然而站在体验的角度引起误操作，敏感操作的功能点尽量规避，可以使用其他方式处理。</p>
+<p>toast类提示文案，要符合APP调性，比如B站年轻人较多，语言可以偏二次元些，微信自家产品受众范围较大，toast提示就更加通俗化，总之切勿直接使用技术类语言放在toast提示上，每每看及总让人无语之至。</p>
+<p>若针对错误提示想进行错误编码，便于快速查找，可以在提示前后增加数字，比如常见的“加载失败404”等等；另外提示语设置上要进行克制，首先能不弹提示的就不要弹提示，实在不行非要提示的一定要把用户当人看，举个例子：</p>
+<p>用户进行交互，比如登录，为了即时反馈用户登录交互，很多APP都会提示“恭喜你登录成功”乍一眼看没啥问题，细想之下全是不动脑子：
+首先，登录前后界面变化非常明显，不提示用户也知道自己登录成功了，倘若没办法真的需要进行提示，请问，恭喜你登录成功这句话没问题吗？就登录这个交互有什么好恭喜的？登录成功有什么好进行提示的？那感觉就像一个人口渴想喝水，一杯下肚，旁边有个人来一句“恭喜你喝水成功”“恭喜你撒尿成功”滑天下之大稽。我又没犯病，喝个水值得恭喜？</p>
+<p>4.不打断用户操作，给用户续操作。
+前面我们提到，用户的交互尽量不要打断，另外即便特殊情况真的打断了用户交互，确认之后也要直接给用户续上。比如未登录下的评论，由于未登录需要先登录再评论，很多APP在设计上会忽略这种小细节，用户点击评论或者点赞，触发登录，登录之后还需要再次点击评论或者点赞才能延续先前的交互。一个广为人知的理论，任何一步交互都会存在转化漏斗或者流失，因为被打断的交互，需要再次续上，像各个的场景，用户点赞之后触发登录，登录成功之后应该直接完成点赞交互，不需要用户再去额外点击，敏感交互除外。</p>
+<p>5.预判用户交互，不做额外交互
+这一点我前面的文章有提到，以社区发帖为例，用户去社区发帖需要输入，提交；其他交互均属于多余，实际上很多社区类产品的发布按钮放在屏幕下方，一进去需要呼出键盘，打完字之后还需要关闭键盘，因为发布按钮被键盘覆盖住了，由此带来了很多多余交互，实际设计中我们可以让键盘主动弹出，将键盘弹出覆盖住的交互都可以移动个位置，比如主流社区发布交互都在用上角，这样就不会被键盘覆盖，打完之后直接提交。</p>
+<p>其中主动谈起键盘的，就属于预判用户交互的，这种设计就非常人性化，做预判类设计，切忌不可妨碍用户其他交互，比如主动弹起键盘，会覆盖掉其他功能，这个时候就是不提倡的。在预判类交互中，键盘弹窗是最普遍的，还有一个常见的例子，苹果手机快速获取验证码的，那可真叫一绝。</p>
+<p>6.键盘右下角enter键
+这是一个非常容易被忽视的细节，键盘右下角的enter本是一个非常高频的交互，但是在移动端设计中，很多产品不规范，导致enter键使用不多，按照我们上面的理论，右下角应该是非常方便进行点击交互的，所以enter键非常值得开发，他可以是换行，可以是下一步。可以是提交，可以是确认，可以是发送等等，关于enter键的设计我也是在微信聊天时发现的，感兴趣可以使用安卓微信和苹果微信打字互聊试试，差异相当明显。</p>
+
+  
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2022  产品改变世界 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">主页</a></li>
+         
+        <li><a href="/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95">躬行篇</a></li>
+         
+        <li><a href="/blog">纸上篇</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>
