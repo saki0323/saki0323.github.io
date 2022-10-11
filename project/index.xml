@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on 产品改变世界</title>
+    <link>https://saki0323.github.io/project/</link>
+    <description>Recent content in Projects on 产品改变世界</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Oct 2022 19:01:30 +0800</lastBuildDate><atom:link href="https://saki0323.github.io/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人SDK作品展示（面试专用）</title>
+      <link>https://saki0323.github.io/project/%E4%B8%AA%E4%BA%BAsdk%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA%E9%9D%A2%E8%AF%95%E4%B8%93%E7%94%A8/</link>
+      <pubDate>Mon, 10 Oct 2022 19:01:30 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E4%B8%AA%E4%BA%BAsdk%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA%E9%9D%A2%E8%AF%95%E4%B8%93%E7%94%A8/</guid>
+      <description>一.登录系统 1.</description>
+    </item>
+    
+    <item>
+      <title>个人作品展示（原图）</title>
+      <link>https://saki0323.github.io/project/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA%E5%8E%9F%E5%9B%BE/</link>
+      <pubDate>Sun, 09 Oct 2022 16:32:04 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E5%93%81%E5%B1%95%E7%A4%BA%E5%8E%9F%E5%9B%BE/</guid>
+      <description>全局类设计</description>
+    </item>
+    
+    <item>
+      <title>Sdk工具向设计回顾</title>
+      <link>https://saki0323.github.io/project/sdk%E5%B7%A5%E5%85%B7%E5%90%91%E8%AE%BE%E8%AE%A1%E5%9B%9E%E9%A1%BE/</link>
+      <pubDate>Thu, 29 Sep 2022 11:12:01 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/sdk%E5%B7%A5%E5%85%B7%E5%90%91%E8%AE%BE%E8%AE%A1%E5%9B%9E%E9%A1%BE/</guid>
+      <description>1.游戏sdk工具向优化的可行性。</description>
+    </item>
+    
+    <item>
+      <title>Sdk项目梳理</title>
+      <link>https://saki0323.github.io/project/sdk%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86/</link>
+      <pubDate>Tue, 27 Sep 2022 11:19:45 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/sdk%E9%A1%B9%E7%9B%AE%E6%A2%B3%E7%90%86/</guid>
+      <description>1.初期提出优化登录系统、推送系统这些想法来源</description>
+    </item>
+    
+    <item>
+      <title>游戏SDK浅介绍</title>
+      <link>https://saki0323.github.io/project/%E6%B8%B8%E6%88%8Fsdk%E6%B5%85%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Sun, 25 Sep 2022 03:32:39 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E6%B8%B8%E6%88%8Fsdk%E6%B5%85%E4%BB%8B%E7%BB%8D/</guid>
+      <description>此处的SDK特指游戏发行、游戏厂商制作的集成小功能，分为一般分为对接和自用，这样叙述不太好理解，举些栗子：</description>
+    </item>
+    
+    <item>
+      <title>产品UI设计规范</title>
+      <link>https://saki0323.github.io/project/%E4%BA%A7%E5%93%81ui%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 17 Aug 2022 19:36:19 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E4%BA%A7%E5%93%81ui%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83/</guid>
+      <description>过去的几年，我任职于所谓的互联网小厂，前期大部分时间奔波于整个产品开发中心的不规范之中，在各种体系还在从0到1搭建的时期，UI设计上简直是测试部门bug集中的重灾区。为此我曾花费了大量的经历来规范产品部门、设计部门、技术部门的UI处理上的规范问题。正所谓磨刀不误砍柴工，一个内部明确的设计规范对整体研发流程大有裨益，少了很多扯皮，产品也更耐打。</description>
+    </item>
+    
+    <item>
+      <title>游戏类社区，应该怎么玩？</title>
+      <link>https://saki0323.github.io/project/%E6%B8%B8%E6%88%8F%E7%B1%BB%E7%A4%BE%E5%8C%BA%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E7%8E%A9/</link>
+      <pubDate>Tue, 16 Aug 2022 19:34:04 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E6%B8%B8%E6%88%8F%E7%B1%BB%E7%A4%BE%E5%8C%BA%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E7%8E%A9/</guid>
+      <description>2020年，我接受搭建游戏删档内测功能，除了正常的游玩之外，我们也满足了其IM群聊的功能，同样的也想通过删档内测这个功能，将我们的游戏社区真正搭建起来，于此同时市面上相关类的产品数不胜数，包括九游（单独做的APP，名字我忘了）渠道的神TapTap（奈何如今神已经陨落，但是瘦死的骆驼比马大）包括腾讯自己也在搞类似的模块。</description>
+    </item>
+    
+    <item>
+      <title>生态学视角下的产品问题</title>
+      <link>https://saki0323.github.io/project/%E7%94%9F%E6%80%81%E5%AD%A6%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 04 May 2022 19:38:22 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E7%94%9F%E6%80%81%E5%AD%A6%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E4%BA%A7%E5%93%81%E9%97%AE%E9%A2%98/</guid>
+      <description>我刚进互联网行业做运营时，就老听到大佬们谈论生态问题，本人大学专业课就是生态学，就一直好奇大家的生态是同一个生态不，这种疑惑一直到我自己去做产品，伴随着制定产品方案运营策略，内心的感觉越来越强烈：大家聊得做生态做生态等思路和理念，真的很多都在《生态学》中有涉及，作为基础学科的生态学，其间的很多富有哲思的理论均可来指导产品框架以及商业生态的建立。</description>
+    </item>
+    
+    <item>
+      <title>入门级UI学习法</title>
+      <link>https://saki0323.github.io/project/%E5%85%A5%E9%97%A8%E7%BA%A7ui%E5%AD%A6%E4%B9%A0%E6%B3%95/</link>
+      <pubDate>Wed, 26 Jan 2022 19:30:41 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E5%85%A5%E9%97%A8%E7%BA%A7ui%E5%AD%A6%E4%B9%A0%E6%B3%95/</guid>
+      <description>最近遇到了一个心仪的前端小姐姐，作为一个合格且有情调的产品，当然是送她一套证明自己粗中有细的设计图！ 设计老哥，别看片了，赶紧出图！</description>
+    </item>
+    
+    <item>
+      <title>看不见的UI，产品经理的打底裤</title>
+      <link>https://saki0323.github.io/project/%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84ui%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E6%89%93%E5%BA%95%E8%A3%A4/</link>
+      <pubDate>Sat, 22 Jan 2022 19:19:47 +0800</pubDate>
+      
+      <guid>https://saki0323.github.io/project/%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84ui%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E7%9A%84%E6%89%93%E5%BA%95%E8%A3%A4/</guid>
+      <description>弱小和无知从来都不是生存的障碍,傲慢才是。 三体</description>
+    </item>
+    
+  </channel>
+</rss>
